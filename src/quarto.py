@@ -34,11 +34,14 @@ class Quarto:
         #gui.rect(x=10, y= 10, width=800, heigth=600)
     def build_tabuleiro(self,gui):
         """docs here"""
-        self.tabuleiro =Tabuleiro(gui)
+        self.tabuleiro =Tabuleiro(gui,self)
     def build_mao(self,gui):
         """docs here"""
         self.mao1 =Mao(gui,self,0)
         self.mao2 =Mao(gui,self,1)
+    def apontada(self, casa):
+        "a peca escolhida move para a casa da base"
+        casa.escolhida(peca)
     def escolhida(self, peca):
         "a peca escolhida move para a casa da base"
         self.casa.escolhida(peca)

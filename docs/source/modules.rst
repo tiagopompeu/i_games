@@ -18,7 +18,7 @@ Quarto - Core Modules
    Module :mod:`mao`
 
 .. note::
-   Aggregates factory, control and interface units in this single module
+   Main Model Unit.
 
 .. _mao:
 
@@ -35,7 +35,7 @@ Quarto - Core Modules
    Class :class:`peca.Peca`
 
 .. note::
-   Interface Unit.
+   Model Unit.
 
 .. _tabuleiro:
 

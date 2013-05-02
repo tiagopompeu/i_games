@@ -23,8 +23,11 @@ class Casa:
         self.peca = peca
         self.peca.move(self)
         self._estado_corrente = lambda *a: None
+    def apontada(self):
+        "remove peca da base e poe aqui"
+        self.local.apontada(self)
     def escolhida(self, peca):
-        "a peca escolhida age segundo o estado corrente"
+        "esta casa age segundo o estado corrente"
         self._estado_corrente(peca)
     def sai(self, peca):
         "a peca escolhida sai daqui"

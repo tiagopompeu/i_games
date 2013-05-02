@@ -15,9 +15,12 @@ Quarto - Tabuleiro
 from casa import Casa
 class Tabuleiro:
     """Campo do jogo onde se joga as pecas"""
-    def __init__(self, gui):
-        
+    def __init__(self, gui, local):
+        self.local = local
         self.casas = []
         self.build(gui)
     def build(self, gui):
         self.casas = [Casa(gui, self, i) for i in range(16)]
+    def apontada(self,casa):
+        "remove peca da base e poe aqui"
+        self.local.apontada(casa)

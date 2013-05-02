@@ -59,6 +59,19 @@ class TestQuarto(unittest.TestCase):
         q = self.app.mao1.pecas[1]
         q.escolhida()
         self.assertEqual(q.local,self.app.mao1)
+    def test_escolhe_casa(self):
+        "peca sai da base e vai para a casa."
+        self.app.build_base(None)
+        m = self.app.mao2
+        t = self.app.tabuleiro
+        #: a peca inicia na mao
+        p = m.pecas[0]
+         #: a peca escolhida vai para a casa
+        p.escolhida()
+        c = t.casas[0]
+        c.apontada()
+        self.assertEqual(p.local,c)
+        self.assertEqual(self.app.casa.peca,None)
 
 
 if __name__ == '__main__':
