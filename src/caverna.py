@@ -30,21 +30,37 @@ class Caverna:
 
     def cria_caverna(self):
         """Cria a caverna e suas partes."""
-        self.main.style.backgroundSize = 'cover'
-        self.main.style.backgroundImage = 'url(%s)' % CAVEX
-        self.main.style.width = 1000
-        self.main.style.height = 800
+        self.camara = Camara(self.html)
         # criando um tunel
         tunel = self.html.DIV()
         tunel.setAttribute('style', 'height:700; width: 33.33%; float: left;')
-        self.main <= tunel
+        self.camara.div <= tunel
         tunel2 = self.html.DIV()
         tunel2.setAttribute('style', 'height:700; width: 33.33%; float: left;')
-        self.main <= tunel2
+        self.camara.div <= tunel2
         tunel3 = self.html.DIV()
         tunel3.setAttribute('style', 'height:700; width: 33.33%; float: left;')
-        self.main <= tunel3
+        self.camara.div <= tunel3
+        self.main <= self.camara.div
         return self
+
+class Camara:
+     """Uma camara da caverna com tuneis e habitantes. :ref:`camara`
+    """
+     def __init__(self, html):
+         """Inicia a camara."""
+         self.html = html
+         self.div = None
+         self.tunel = {}
+
+     def cria_camara(self):
+        """Cria a camara e suas partes."""
+        self.div = self.html.DIV()
+        self.div.style.backgroundSize = 'cover'
+        self.div.style.backgroundImage = 'url(%s)' % CAVEX
+        self.div.style.width = 1000
+        self.div.style.height = 800
+        self.div.text = "Caverna Cavernosa"
 
 
 
