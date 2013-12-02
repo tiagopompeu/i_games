@@ -77,7 +77,7 @@ class Tunel:
         """Cria o tunel e suas partes."""
         self.div = self.html.DIV(Id=self.nome)
         self.passagem = self.html.DIV(Id='passa_'+self.nome)
-        self.entrada = self.html.DIV(Id='entra_'+self.nome)
+        self.entrada = self.html.DIV(Id='entra_'+self.nome, width="33.33%")
         self.saida <= self.entrada
         self.div.style.backgroundSize = 'cover'
         self.div.style.backgroundImage = 'url(%s)' % CAVEZ
