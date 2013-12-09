@@ -58,7 +58,6 @@ class Camara:
         self.html, self.nome, self.lugar = html, nome, lugar
         self.passagem = self.div = None
         self.tunel = {}
-        self.sala = None
 
     def cria_camara(self):
         """Cria a camara e suas partes."""
@@ -80,14 +79,24 @@ class Tunel:
     def __init__(self, html, nome, lugar, saida, caverna):
         """Inicia a tunel."""
         self.html, self.nome, self.lugar, self.saida, self.caverna = html, nome, lugar, saida, caverna
-        self.passagem = self.div = None
-        self.entrada = self.div = None
+        self.passagem = self.sai_tunel = self.div = None
+        self.entrada = self.entrada_camara = self.div = None
         self.camara = {}
 
     def movimenta(self, ev):
         print(ev.target.Id)
         self.caverna.movimenta(self)
-        self.caverna.main <= self.div
+
+    def sai_tunel(self, ev):
+        print(ev.target.Id)
+        self.caverna.movimenta(self.lugar)
+
+    def cria_saida(self):
+        """Cria uma saida desse tunel"""
+        estilo = dict(width="50%", height=700, Float='left')
+        self.entrada_camara = self.html.DIV(Id='entra_'+self.nome, style=estilo)
+        self.entrada_camara.onclick = self.sai_tunel
+        self.passagem <= self.entrada_camara
 
     def cria_tunel(self):
         """Cria o tunel e suas partes."""
@@ -102,6 +111,8 @@ class Tunel:
         self.div.style.width = 1000
         self.div.style.height = 800
         self.div.text = "Esse é o tunel!"
+        self.div <= self.passagem
+        self.cria_saida()
         return self
 
 
