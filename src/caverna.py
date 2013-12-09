@@ -29,7 +29,6 @@ class Caverna:
         self.heroi = None
         self.main = self.doc['main']
         self.camara = None
-        self.esconde = None
         self.sala = None
         self.esconde = self.html.DIV()
 
